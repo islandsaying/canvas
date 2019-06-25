@@ -1,0 +1,67 @@
+ul,ol{list-style: none;}
+*{
+  margin: 0;
+  padding: 0;
+}
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+#xxx{
+    background: blanchedalmond;
+    display: block;
+  }
+  body{
+    margin: 0px;
+  }
+  .actions{
+    position:fixed;
+    top:0;
+    left:0;
+    padding: 10px;
+  }
+  .actions svg{
+    width: 1.5em;
+    height: 1.5em;
+    margin: 5px;
+    /* 增加间距,防误触 */
+    transition: all 0.2s 
+    /* 过渡动画为0.2s,减少生硬 */
+  }
+  .actions svg.active{
+    color: brown;
+    transform: scale(1.2);
+    /* 
+    被选中的样式颜色变红
+    变成以前的1.2倍大小
+     */
+  }
+  .colors{
+    position: fixed;
+    top: 50px;
+    left: 10px;
+  }
+  .colors>li{
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  .colors>li.red{
+    background: red;
+  }
+  .colors>li.green{
+    background: green;
+  }
+  .colors>li.blue{
+    background: blue;
+  }
+  .colors>li.active{
+    box-shadow: 0 0 5px rgba(0,0,0,0.95);
+    transform: scale(1.2)
+  }

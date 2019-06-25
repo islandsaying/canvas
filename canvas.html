@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>my canvas</title>
+  <link rel="stylesheet" href="canvas.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+  <canvas id="xxx" width=300 height=300></canvas>
+  <div id="actions" class="actions">
+      <svg id='pen' class="active icon">
+          <use xlink:href="#icon-pen"></use>
+      </svg>
+      <svg id='eraser' class="icon">
+          <use xlink:href="#icon-eraser"></use>
+      </svg>
+  </div>
+  <ol class='colors'>
+    <li id='red' class='red active'></li>
+    <li id='green' class='green'></li>
+    <li id='blue' class='blue'></li>
+  </ol>
+  <script src="canvas.js"></script>
+  <script src="https://at.alicdn.com/t/font_1261208_0eo8jptu9jff.js"></script>
+</body>
+</html>
