@@ -1,11 +1,14 @@
+
 var yyy = document.getElementById('xxx');
 var context = yyy.getContext('2d');
+var lineWidth = 5
 
 autoSetCanvasSize(yyy) //自动调整画板大小
 
 listenToUser(yyy) //监听鼠标事件
 
 var eraserEnabled = false
+
 pen.onclick = function(){
     eraserEnabled = false
     pen.classList.add('active')
@@ -16,6 +19,20 @@ eraser.onclick = function(){
     eraser.classList.add('active')
     pen.classList.remove('active')
 }
+clear.onclick = function(){
+    context.clearRect(0, 0, yyy.width, yyy.height);
+}
+save.onclick = function(){
+    var url = yyy.toDataURL('image/png')
+    var a = document.createElement('a')
+    document.body.appendChild(a)
+    a.href = url
+    a.download = '我的大作'
+    a.click()
+}
+
+
+
 
 red.onclick = function(){
     context.strokeStyle = 'red'
@@ -34,6 +51,13 @@ blue.onclick = function(){
     blue.classList.add('active')
     green.classList.remove('active')
     red.classList.remove('active')
+}
+
+thin.onclick = function(){
+    lineWidth = 5
+}
+thick.onclick = function(){
+    lineWidth = 10
 }
 
 //  橡皮擦和画笔的存在互斥,点击实现切换,换成图标后重新写 
@@ -74,7 +98,7 @@ function autoSetCanvasSize(canvas){
 function drawLine(x1, y1, x2, y2) {
     context.beginPath();
     context.moveTo(x1, y1) //起点
-    context.lineWidth = 5
+    context.lineWidth = lineWidth //去取当前的画笔宽度
     context.lineTo(x2, y2) //终点
     context.stroke()
     context.closePath()
@@ -132,7 +156,7 @@ if('ontouchstart' in document.body){
 }else{
     //非触屏设备
     canvas.onmousedown = function(aaa) {
-        console.log('down') //移动端测试用
+        //console.log('down') 移动端测试用
 
         var x = aaa.clientX
         var y = aaa.clientY
@@ -168,9 +192,6 @@ if('ontouchstart' in document.body){
     canvas.onmouseup = function(aaa) {
         using = false
     }
-
-}
-    
-
+}   
 }
 
