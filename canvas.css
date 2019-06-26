@@ -68,3 +68,21 @@ ul,ol{list-style: none;}
     box-shadow: 0 0 5px rgba(0,0,0,0.95);
     transform: scale(1.2)
   }
+  .sizes {
+    position: fixed;
+    right: 15px;
+    top: 4px;
+  }
+  .sizes > li{
+    margin: 15px 0;
+  }
+  .sizes > .thin{
+    height: 0;
+    width: 35px;
+    border-top: 3px solid black;
+  }
+  .sizes > .thick{
+    height: 0;
+    width: 35px;
+    border-top: 6px solid black;
+  }
